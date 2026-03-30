@@ -90,6 +90,8 @@ fn main() {
     // ENUM WITH DATA
     let msg = Message::Text("hello".to_string());
 
+    let msg2: Message = Message::Number(23);
+
     match msg {
         Message::Text(s) => println!("Text: {}", s),
         Message::Number(n) => println!("Number: {}", n),
@@ -181,7 +183,6 @@ fn main() {
         OrderState::Paid { amount } => println!("Paid: {}", amount),
         _ => {}
     }
-
 
     println!("--- ENUM LEARNING COMPLETE ---");
 }
