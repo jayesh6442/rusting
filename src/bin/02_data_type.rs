@@ -47,7 +47,7 @@ fn main() {
 
     println!(" this is isize {} and this is usize  {}", e, f);
 
-    // ? this nigger are unsigned that means this can't be nagative
+    // ? this are unsigned that means this can't be nagative
     let g: u8 = 234;
     let h: u16 = 234;
     let i: u32 = 234;
