@@ -50,7 +50,7 @@ fn main() {
     one_of.display();
     test_fn(&one_of);
     one_of.change_type();
-    one_of.display();
+    // one_of.display();
 }
 
 //? mut and unmut fn on structs
