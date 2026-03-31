@@ -47,4 +47,25 @@ fn main() {
     let another_owner = one_onner; // ? here the owner ship of the one_onner trasfered to the another_owner and first goes out of scope
     println!("{another_owner}");
     drop(another_owner);
+    let pass_on = String::from("one of the vlaue");
+    // take_owner(pass_on);
+    // println!("{pass_on}");
+    remain_original_owner(&pass_on);
+    println!("{pass_on}");
+    // take_owner(pass_on);
+    let test_mut = String::from("update likey to happen");
+    unmutable_params(test_mut);
+}
+
+fn take_owner(value: String) {
+    // ? this thing take the owner ship of passed value and clean up at the end of code and will
+    println!("{value}");
+}
+fn remain_original_owner(value: &String) {
+    println!("{value}");
+}
+
+fn unmutable_params(mut meal: String) {
+    meal.push_str("hi there this is new content");
+    println!("updated value of the man {}", meal);
 }
