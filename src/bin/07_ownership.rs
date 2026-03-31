@@ -1,0 +1,49 @@
+fn main() {
+    println!("this is ownership chapter");
+
+    {
+        let a = "jayesh";
+        println!("{}", a);
+        // ? this will be cleared at end of this block of code
+    }
+    // ?no allow to use a here
+
+    let a = "jayesh";
+    println!("{a}");
+    // ? at the end of this code the a will go out of scope in this fn
+
+    let time = 2025;
+    // ? this will be copy the pointer value of the time
+    let another_time = time;
+    println!("{}", time);
+    println!("{}", another_time);
+
+    println!("{}", another_time);
+
+    let string_type_one = "jayesh";
+    // ? this is also copy of the pointer
+    let another_string_type_two = string_type_one;
+    println!("{}", string_type_one);
+    println!("{}", another_string_type_two);
+
+    let string_type_one_another = String::from("new one");
+    // let strint_ref_new = string_type_one_another;
+    // ? this create clone of original ref string
+
+    // let strint_ref_new = string_type_one_another.clone();
+    // ? this is also valid
+    let strint_ref_new = string_type_one_another.to_owned();
+    println!("{}", string_type_one_another); // ? this gives error because the original value is cleared and new one ref created
+    println!("{}", strint_ref_new);
+    let mut string_that_can_be_updated = String::from("jayesh");
+
+    string_that_can_be_updated.push_str(" update");
+    println!("{}", string_that_can_be_updated);
+
+    // ? heap allocated data are don't follow the copy trait so previous value cleared and new one is created
+    // ? move the owner ship
+
+    let one_onner = String::from("jayesh");
+    let another_owner = one_onner; // ? here the owner ship of the one_onner trasfered to the another_owner and first goes out of scope
+    println!("{another_owner}");
+}
