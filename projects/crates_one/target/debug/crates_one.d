@@ -1,0 +1,1 @@
+/home/devjayesh/Projects/rust/final_code_base/projects/crates_one/target/debug/crates_one: /home/devjayesh/Projects/rust/final_code_base/projects/crates_one/src/inventory.rs /home/devjayesh/Projects/rust/final_code_base/projects/crates_one/src/main.rs /home/devjayesh/Projects/rust/final_code_base/projects/crates_one/src/order/mod.rs
