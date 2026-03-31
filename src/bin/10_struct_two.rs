@@ -10,6 +10,7 @@ impl Coffe {
         println!(
             "this is {} the price of it  is {} and its  {}",
             self.name, self.price, self.is_hot
+
         );
     }
 }
@@ -21,6 +22,11 @@ impl Coffe {
             name,
             is_hot,
         }
+    }
+
+    fn change_type(mut self: Self) {
+        self.is_hot = !self.is_hot;
+        self.display();
     }
 }
 fn main() {
@@ -38,6 +44,21 @@ fn main() {
     for i in array_of_coffe {
         println!("{:?}", i);
     }
-    let one_of = Coffe { ..mocha };
+    let mut one_of = Coffe { ..mocha };
     one_of.display();
+    update_name(&mut one_of);
+    one_of.display();
+    test_fn(&one_of);
+    one_of.change_type();
+    one_of.display();
+}
+
+//? mut and unmut fn on structs
+
+fn update_name(coffe: &mut Coffe) {
+    coffe.name = String::from("updated name");
+}
+
+fn test_fn(coffe: &Coffe) {
+    println!("{}  {} {}", coffe.name, coffe.price, coffe.is_hot);
 }
