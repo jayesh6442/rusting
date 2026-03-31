@@ -46,4 +46,5 @@ fn main() {
     let one_onner = String::from("jayesh");
     let another_owner = one_onner; // ? here the owner ship of the one_onner trasfered to the another_owner and first goes out of scope
     println!("{another_owner}");
+    drop(another_owner);
 }
