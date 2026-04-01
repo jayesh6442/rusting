@@ -1,3 +1,5 @@
+use std::sync::Mutex;
+
 fn main() {
     println!("testing");
     let ok: Result<i32, &str> = Result::Ok(4);
