@@ -21,6 +21,8 @@
 use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;
+
+
 fn main() {
     let (tx, rx) = mpsc::channel();
     let t1 = tx.clone();
@@ -63,5 +65,6 @@ fn main() {
         println!("Got: {}", received);
     }
     // let rec = rx.recv().unwrap();
+    
     // println!("Got: {}", rec);
 }
